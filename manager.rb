@@ -29,4 +29,8 @@ class Manager < Employee
        end
        total
     end
+
+    def bonus(multiplier)
+        get_sub_sals * multiplier
+    end
 end
