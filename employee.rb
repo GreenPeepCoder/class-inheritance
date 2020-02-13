@@ -3,7 +3,7 @@ class Employee
     attr_reader :name, :title, :salary 
 
     def initialize(name, title, salary, boss)
-        @name, @title, @salary, @boss = name, title, salary, boss
+        @name, @title, @salary = name, title, salary, boss
     end
 
     def boss
@@ -12,5 +12,9 @@ class Employee
 
     def bonus(multiplier)
         return @salary * multiplier
+    end
+
+    def inspect
+        @name.inspect
     end
 end
