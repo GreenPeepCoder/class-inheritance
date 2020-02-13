@@ -17,4 +17,16 @@ class Manager < Employee
     def add_subordinates(*subordinates)
         subordinates.each {|sub| @subordinates << sub}
     end
+
+    def get_sub_sals
+       total = 0
+       self.subordinates.each do |sub|
+        if sub.is_a?(Manager)
+            total += sub.salary + sub.get_sub_sals
+        else
+            total += sub.salary
+        end
+       end
+       total
+    end
 end
