@@ -18,6 +18,12 @@ class Manager < Employee
         subordinates.each {|sub| @subordinates << sub}
     end
 
+    def bonus(multiplier)
+        get_sub_sals * multiplier
+    end
+
+    protected 
+    
     def get_sub_sals
        total = 0
        self.subordinates.each do |sub|
@@ -30,7 +36,4 @@ class Manager < Employee
        total
     end
 
-    def bonus(multiplier)
-        get_sub_sals * multiplier
-    end
 end
